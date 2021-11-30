@@ -1,8 +1,8 @@
 # production images
 FROM node:14 as builder
-ARG RELEASE_VERSION
+ARG RELEASE_VERSION=0.25.1-beta.3
 ENTRYPOINT ["subql-node"]
-RUN npm i -g --unsafe-perm @subql/node@${RELEASE_VERSION}
+RUN npm i -g --unsafe-perm bifrost-subql-node@${RELEASE_VERSION}
 
 FROM node:14-alpine
 ENV TZ utc
